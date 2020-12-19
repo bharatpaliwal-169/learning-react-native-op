@@ -8,13 +8,13 @@ export default function Object_state() {
     age: 24
   })
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.text}> This is {person.name}</Text>
       <Text style={styles.text}> his age is : {person.age} </Text>
-      <Text>Enter Name:</Text>
+      <Text style={styles.inputText}>Enter Name:</Text>
       <TextInput style={styles.input} placeholder='e.g: Ram Prasad' 
                   multiline onChangeText={(value)=>setPerson({...person,name: value})}></TextInput>
-      <Text>Enter Age:</Text>
+      <Text style={styles.inputText}>Enter Age:</Text>
       <TextInput style={styles.input} placeholder='e.g: 999' 
                   keyboardType='numeric' onChangeText={(value)=>setPerson({...person,age: value})}></TextInput>
 
@@ -23,16 +23,28 @@ export default function Object_state() {
 }
 
 const styles = StyleSheet.create({
+  container:{
+    flex:2,
+    backgroundColor:"#f2f2f2",
+    textAlign:"center",
+    
+  },
   text:{
     color:'#303030',
-    fontSize:30,
-    padding:10
+    fontSize:20,
+    padding:8
   },
   input:{
     borderWidth:1,
     borderColor:"#777",
-    margin:12,
+    marginTop:12,
+    marginLeft:10,
     padding:8,
     width:200
+  },
+  inputText:{
+    color:'#000',
+    fontSize:15,
+    padding:10
   },
 });
